@@ -42,7 +42,9 @@ Final state: 2 audits, 6 claims, violation count 1. 9 negative tests all rejecte
 
 ## Verification
 
-Deployed and verified in GenLayer Studio — see `test_flow.md` for the full run. (Contract address and transaction count added after deployment.)
+Deployed and verified in GenLayer Studio on 2026-11-09: contract [0x06a852688E326D0596E786519E15168AE16C98B4](https://explorer-studio.genlayer.com/address/0x06a852688E326D0596E786519E15168AE16C98B4), 25 transactions (16 SUCCESS, 9 intentional ERRORs from the negative tests). Claim 0 valid/high (violation count 0 → 1); claims 1–5 invalid/none — including a repeat of the rejected claim ruled invalid on its own grounding (not called a duplicate) and a repeat of the accepted claim ruled invalid as a duplicate. The severity invariant holds on all six claims. 9 negative tests rejected as expected. See `test_flow.md` for the full run.
+
+Known boundary: submitting a claim to a nonexistent audit fails with a raw `KeyError` instead of a friendly message (the TreeMap lookup raises before any check). The submission is still rejected, so the behavior is correct; the message is just unfriendly.
 
 ## Layout
 
