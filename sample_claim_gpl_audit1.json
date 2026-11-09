@@ -1,0 +1,1 @@
+{"audit_id":1,"claimed_severity":"high","statement":"sharp-lib is licensed GPL-3.0, which the project policy forbids, and it is a runtime dependency shipped in the distributed bundle.","title":"Forbidden GPL-3.0 dependency shipped"}
